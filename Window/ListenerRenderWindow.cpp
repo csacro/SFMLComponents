@@ -25,7 +25,7 @@ void ListenerRenderWindow::run() {
                     break;
             }
         }
-        this->clear(sf::Color::Black);
+        this->clear(sf::Color::Blue);
         for(Element *e: mElementList) {
             e->draw(*this);
         }

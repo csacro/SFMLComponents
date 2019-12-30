@@ -30,8 +30,7 @@ public:
      * @param text std::string which is displayed by TextField
      * @param font sf::Font of text in TextField
      */
-    TextField(sf::Vector2i pos,
-              sf::String &text, sf::Font &font, float minWidth, float minHeight);
+    TextField(sf::Vector2i pos, sf::String &text, sf::Font &font, float minWidth, float minHeight);
 
     /**
      * changes the text of the TextField

@@ -11,13 +11,15 @@ add_library(SFMLComponents
         Listener/Listener.h
         Listener/OnClickListener.cpp Listener/OnClickListener.h
         Listener/OnTextListener.cpp Listener/OnTextListener.h
-        Window/ListenerRenderWindow.cpp Window/ListenerRenderWindow.h Listener/OnTextListener.cpp Listener/OnTextListener.h)
+        Window/ListenerRenderWindow.cpp Window/ListenerRenderWindow.h
+        WindowViews/WindowView.h
+        )
 
 target_link_libraries (SFMLComponents
         sfml-graphics sfml-window sfml-system
         )
 
-add_executable(SFMLComponentsSample sample.cpp)
+add_executable(SFMLComponentsSample sample.cpp SampleView.cpp SampleView.h)
 target_link_libraries(SFMLComponentsSample SFMLComponents)
 
 install(TARGETS SFMLComponents DESTINATION /usr/lib/SFMLComponents)

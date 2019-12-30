@@ -13,7 +13,6 @@
  */
 class OnTextListener: virtual public Listener {
 public:
-    void *dummy;
     sf::String mLastText; //last text that got entered
 
     /**
@@ -25,8 +24,8 @@ public:
      * Constructor
      * @param function void (*)() that is getting called by Listener
      */
-    explicit OnTextListener(void (*function)())
-        : Listener(function) {};
+    OnTextListener(void (*function)())
+            : Listener(function) {};
 
     void listen(sf::Event event, sf::RenderWindow &renderWindow) override;
 };

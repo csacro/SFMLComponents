@@ -30,21 +30,16 @@ void TextField::adjustSizeAndPosition() {
 TextField::TextField(sf::Vector2i pos,
                      sf::String &text, sf::Font &font,
                      float minWidth, float minHeight) {
+
     mPos = pos;
     mMinSize.width = minWidth;
     mMinSize.height = minHeight;
 
-    mText.setFont(font);
+    mText.setFont(font); //TODO: sf::Font causes Segmentation fault
     mText.setString(text);
     mText.setFillColor(sf::Color::Black);
 
-    if(text.isEmpty()) {
-        mText.setString("T");
-    }
     adjustSizeAndPosition();
-    if(text.isEmpty()) {
-        mText.setString("");
-    }
 
 }
 
