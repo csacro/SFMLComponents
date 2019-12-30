@@ -6,9 +6,6 @@
 #define SFMLCOMPONENTS_EDITFIELD_H
 
 
-#include "Element.h"
-#include "ClickableElement.h"
-#include "TextField.h"
 #include "Button.h"
 
 class EditField: public Button {

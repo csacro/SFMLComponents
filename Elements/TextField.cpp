@@ -2,7 +2,6 @@
  * @author Carolin Schindler
  */
 
-#include <iostream>
 #include "TextField.h"
 
 float getMaxFloat(float is, float min, float *margin) {

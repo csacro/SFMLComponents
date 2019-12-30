@@ -7,7 +7,7 @@
 
 
 #include <SFML/Window/Event.hpp>
-#include "../Elements/Element.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 
 /**
  * abstract class that has to be inherited by all kind of Listeners

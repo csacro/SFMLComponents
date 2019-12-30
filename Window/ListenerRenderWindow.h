@@ -6,10 +6,10 @@
 #define SFMLCOMPONENTS_LISTENERRENDERWINDOW_H
 
 
+#include <list>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../Elements/Element.h"
 #include "../Listener/Listener.h"
-#include <list>
 
 /**
  * class adds std::list for Elements and Listener to RenderWindow
