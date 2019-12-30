@@ -35,7 +35,7 @@ TextField::TextField(sf::Vector2i pos,
     mMinSize.width = minWidth;
     mMinSize.height = minHeight;
 
-    mText.setFont(font); //TODO: sf::Font causes Segmentation fault
+    mText.setFont(font);
     mText.setString(text);
     mText.setFillColor(sf::Color::Black);
 

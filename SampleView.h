@@ -18,7 +18,11 @@ public:
     //Constructor
     SampleView(sf::Font &font);
 
-    //TODO: make Elements, Listener and Listener methods private
+    void draw(sf::RenderWindow &renderWindow) override;
+
+    void listen(sf::Event event, sf::RenderWindow &renderWindow) override;
+
+private:
     //Elements
     inline static TextField tf;
     inline static Button bt;
@@ -33,10 +37,6 @@ public:
     static void btClickFunction();
     static void efClickFunction();
     static void textFunction();
-
-    void draw(sf::RenderWindow &renderWindow) override;
-
-    void listen(sf::Event event, sf::RenderWindow &renderWindow) override;
 };
 
 
