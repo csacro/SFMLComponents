@@ -22,8 +22,7 @@ public:
     /**
      * Constructor calling TextField-Constructor
      */
-    Button(sf::Vector2i pos, sf::String &text, sf::Font &font, float minWidth, float minHeight)
-        : TextField(pos, text, font, minWidth, minHeight) {};
+    Button(sf::Vector2i pos, sf::String &text, sf::Font &font, float minWidth, float minHeight);
 
     bool isPointInElement(sf::Vector2i point) override;
 };
