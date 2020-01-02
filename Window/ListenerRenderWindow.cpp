@@ -4,7 +4,7 @@
 
 #include "ListenerRenderWindow.h"
 
-void ListenerRenderWindow::run() {
+void ListenerRenderWindow::run(sf::Color clearColor) {
     while (this->isOpen()) {
         sf::Event event;
         while(this->pollEvent(event)) {
@@ -25,7 +25,7 @@ void ListenerRenderWindow::run() {
                     break;
             }
         }
-        this->clear(sf::Color::Blue);
+        this->clear(clearColor);
         for(Element *e: mElementList) {
             e->draw(*this);
         }

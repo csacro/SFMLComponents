@@ -33,8 +33,9 @@ public:
 
     /**
      * handles sf::Events and redraw
+     * @param clearColor sf::Color used to clear Window
      */
-    void run();
+    void run(sf::Color clearColor);
 
     /**
      * add for mElementList

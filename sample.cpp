@@ -20,5 +20,5 @@ int main() {
     lrw.addElement(&s);
     lrw.addListener(&s);
 
-    lrw.run();
+    lrw.run(sf::Color::Cyan);
 }
