@@ -17,3 +17,8 @@ void EditField::addText(sf::String &lastText) {
         setText(curText);
     }
 }
+
+bool EditField::isPointInElement(sf::Vector2i point) {
+    sf::FloatRect shape = mRectangle.getGlobalBounds();
+    return shape.contains(point.x, point.y);
+}
