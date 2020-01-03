@@ -9,14 +9,14 @@
 #include "SampleView.h"
 
 int main() {
-    ListenerRenderWindow lrw(sf::VideoMode(1000, 800), "Hexxagon");
+    ListenerRenderWindow lrw(sf::VideoMode(1000, 800), "Hexxagon", sf::Style::Default);
 
-    sf::Font test;
-    if (!test.loadFromFile("../arial.ttf")) {
+    sf::Font font;
+    if (!font.loadFromFile("../arial.ttf")) {
         std::cout << "cannot load font" << std::endl;
     }
 
-    SampleView s(test);
+    SampleView s(font);
     lrw.addElement(&s);
     lrw.addListener(&s);
 

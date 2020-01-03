@@ -8,6 +8,7 @@
 
 #include <list>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics.hpp>
 #include "../Elements/Element.h"
 #include "../Listener/Listener.h"
 
@@ -29,7 +30,8 @@ public:
     /**
      * Constructor calling RenderWindow-Constructor
      */
-    ListenerRenderWindow(sf::VideoMode mode, const sf::String &title) : RenderWindow(mode, title) {};
+     //TODO sf::Style correct type
+    ListenerRenderWindow(sf::VideoMode mode, const sf::String &title, sf::Uint32 style) : RenderWindow(mode, title, style) {};
 
     /**
      * handles sf::Events and redraw

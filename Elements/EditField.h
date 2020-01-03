@@ -8,7 +8,7 @@
 
 #include "Button.h"
 
-class EditField: public TextField, public ClickableElement {
+class EditField: public TextField, virtual public ClickableElement {
 public:
     bool mEdit = false; //bool is true when text should be written to EditField
 

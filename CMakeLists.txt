@@ -22,7 +22,7 @@ target_link_libraries (SFMLComponents
 add_executable(SFMLComponentsSample sample.cpp SampleView.cpp SampleView.h)
 target_link_libraries(SFMLComponentsSample SFMLComponents)
 
-install(TARGETS SFMLComponents DESTINATION /usr/lib/SFMLComponents)
+install(TARGETS SFMLComponents DESTINATION /usr/lib)
 install(FILES Elements/Button.h Elements/ClickableElement.h Elements/EditField.h Elements/TextField.h Elements/Element.h
         DESTINATION /usr/include/SFMLComponents/Elements)
 install(FILES Listener/Listener.h Listener/OnClickListener.h Listener/OnTextListener.h
