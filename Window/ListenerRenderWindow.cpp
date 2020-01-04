@@ -8,8 +8,11 @@ void ListenerRenderWindow::run(sf::Color clearColor) {
     while (this->isOpen()) {
         sf::Event event;
         while(this->pollEvent(event)) {
-            for(Listener *l: mListenerList) {
-                l->listen(event, *this);
+            for(auto it = mListenerList.begin(); !listGotCleared && it != mListenerList.end(); it++) {
+                (*it)->listen(event, *this);
+            }
+            if(listGotCleared) {
+                listGotCleared = false;
             }
             sf::FloatRect visibleArea;
             switch(event.type) {

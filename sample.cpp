@@ -9,6 +9,8 @@
 #include "SampleView.h"
 
 int main() {
+    setenv("DISPLAY", "127.0.0.1:0", true);
+
     ListenerRenderWindow lrw(sf::VideoMode(1000, 800), "Hexxagon", sf::Style::Default);
 
     sf::Font font;
@@ -17,6 +19,10 @@ int main() {
     }
 
     SampleView s(font);
+    lrw.addElement(&s);
+    lrw.addListener(&s);
+
+    lrw.clearLists();
     lrw.addElement(&s);
     lrw.addListener(&s);
 
