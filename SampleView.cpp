@@ -29,11 +29,15 @@ SampleView::SampleView(sf::Font &font) {
 }
 
 void SampleView::btClickFunction() {
-    ef.mEdit = false;
     static int count = 0;
+    ef.mEdit = false;
     count++;
     sf::String text = "Got clicked " + std::to_string(count) + " times";
     bt.setText(text);
+    bt.isVisible = true;
+    if(count%3 == 0) {
+        bt.isVisible = false;
+    }
 }
 
 void SampleView::efClickFunction() {

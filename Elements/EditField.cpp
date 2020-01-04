@@ -5,7 +5,7 @@
 #include "EditField.h"
 
 void EditField::addText(sf::String &lastText) {
-    if(mEdit) {
+    if(mEdit && isVisible) {
         sf::String curText = getText();
         if(lastText == '\b') {
             if(!curText.isEmpty()) {

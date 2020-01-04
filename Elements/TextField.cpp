@@ -51,6 +51,8 @@ sf::String TextField::getText() {
 }
 
 void TextField::draw(sf::RenderWindow &renderWindow) {
-    renderWindow.draw(mRectangle);
-    renderWindow.draw(mText);
+    if(isVisible) {
+        renderWindow.draw(mRectangle);
+        renderWindow.draw(mText);
+    }
 }

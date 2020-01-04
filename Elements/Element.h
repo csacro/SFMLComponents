@@ -12,6 +12,8 @@
  */
 class Element {
 public:
+    bool isVisible = true; //if false Elements should not be drawn and interacted with
+
     /**
      * calls draw on all SFML/Graphics.hpp the Element consists of
      * @param renderWindow sf::RenderWindow that is drawing Element
