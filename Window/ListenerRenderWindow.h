@@ -49,6 +49,10 @@ public:
      * @param listener Listener* to be inserted
       */
      void addListener(Listener* listener) {mListenerList.push_back(listener);};
+     /**
+      * clear for mElementList and mListenerList
+      */
+     void clearLists(){mElementList.clear(); mListenerList.clear();};
 };
 
 
