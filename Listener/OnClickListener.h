@@ -14,9 +14,10 @@
  */
 class OnClickListener: virtual public Listener {
 private:
-    ClickableElement *mClickableElement; //Clickable Element that is listened on
     bool mPressed = false; //true if MouseButton has been Pressed but not Released yet
 public:
+    ClickableElement *mClickableElement; //Clickable Element that is listened on
+
     /**
      * default Constructor
      */
