@@ -34,9 +34,9 @@ private:
     inline static OnTextListener textListener;
 
     //Listener methods
-    static void btClickFunction();
-    static void efClickFunction();
-    static void textFunction();
+    static void btClickFunction(Listener *listener);
+    static void efClickFunction(Listener *listener);
+    static void textFunction(Listener *listener);
 };
 
 

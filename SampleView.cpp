@@ -28,7 +28,7 @@ SampleView::SampleView(sf::Font &font) {
     textListener = OnTextListener(textFunction);
 }
 
-void SampleView::btClickFunction() {
+void SampleView::btClickFunction(Listener *listener) {
     static int count = 0;
     ef.mEdit = false;
     count++;
@@ -40,11 +40,11 @@ void SampleView::btClickFunction() {
     }
 }
 
-void SampleView::efClickFunction() {
+void SampleView::efClickFunction(Listener *listener) {
     ef.mEdit = true;
 }
 
-void SampleView::textFunction() {
+void SampleView::textFunction(Listener *listener) {
     ef.addText(textListener.mLastText);
 }
 

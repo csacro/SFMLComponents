@@ -23,7 +23,7 @@ public:
     virtual void listen(sf::Event event, sf::RenderWindow &renderWindow) = 0;
 
 protected:
-    void (*mFunction)() = {}; //function getting called by Listener
+    void (*mFunction)(Listener *listener) = {}; //function getting called by Listener
 
     /**
      * default Constructor
@@ -32,9 +32,9 @@ protected:
 
     /**
      * Constructor setting mFunction
-     * @param function void (*)() that is getting called by Listener
+     * @param function void (*)(Listener *listener) that is getting called by Listener
      */
-    Listener(void (*function)()) {
+    Listener(void (*function)(Listener *listener)) {
         mFunction = function;
     };
 };

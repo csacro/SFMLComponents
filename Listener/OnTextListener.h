@@ -22,9 +22,9 @@ public:
 
     /**
      * Constructor
-     * @param function void (*)() that is getting called by Listener
+     * @param function void (*)(Listener *listener) that is getting called by Listener
      */
-    OnTextListener(void (*function)())
+    OnTextListener(void (*function)(Listener *listener))
             : Listener(function) {};
 
     void listen(sf::Event event, sf::RenderWindow &renderWindow) override;

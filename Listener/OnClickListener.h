@@ -25,9 +25,9 @@ public:
     /**
      * Constructor
      * @param clickableElement ClickableElement& that is listened on
-     * @param function void (*)() that is getting called by Listener
+     * @param function void (*)(Listener *listener) that is getting called by Listener
      */
-    OnClickListener(ClickableElement &clickableElement, void (*function)());
+    OnClickListener(ClickableElement &clickableElement, void (*function)(Listener *listener));
 
     void listen(sf::Event event, sf::RenderWindow &renderWindow) override;
 };
