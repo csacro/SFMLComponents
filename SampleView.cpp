@@ -8,12 +8,12 @@
 
 SampleView::SampleView(sf::Font &font) {
     //Elements
-    sf::Vector2i pos(20,20);
+    sf::Vector2i pos(60,60);
 
     sf::String text("TextField");
-    tf = TextField(pos, text, font, 0, 0);
+    tf = TextField(pos, text, font, 50, 50);
 
-    pos.y += 60;
+    pos.y += 120;
     sf::String buttonText("Click me");
     bt = Button(pos, buttonText, font, 0, 0);
 

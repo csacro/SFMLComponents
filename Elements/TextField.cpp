@@ -14,7 +14,6 @@ float getMaxFloat(float is, float min, float *margin) {
 }
 
 void TextField::adjustSizeAndPosition() {
-    //TODO: not working for mMinSize set
     sf::FloatRect textBounds = mText.getLocalBounds();
     sf::FloatRect shape = textBounds;
     float marginWidth = 0;
@@ -23,7 +22,7 @@ void TextField::adjustSizeAndPosition() {
     shape.height = getMaxFloat(textBounds.height, mMinSize.height, &marginHeight);
     int margin = 10;
     mRectangle.setSize(sf::Vector2f(shape.width + margin, shape.height + margin));
-    mRectangle.setPosition(mPos.x + shape.left - (margin+marginWidth)/2, mPos.y + shape.top - (margin+marginHeight)/2);
+    mRectangle.setPosition(mPos.x + shape.left - (margin+marginWidth)/2, mPos.y + shape.top - (margin-marginHeight)/2);
     mText.setPosition(mPos.x, mPos.y);
 }
 
