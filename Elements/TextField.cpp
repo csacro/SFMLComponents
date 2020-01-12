@@ -14,6 +14,7 @@ float getMaxFloat(float is, float min, float *margin) {
 }
 
 void TextField::adjustSizeAndPosition() {
+    //TODO: not working for mMinSize set
     sf::FloatRect textBounds = mText.getLocalBounds();
     sf::FloatRect shape = textBounds;
     float marginWidth = 0;

@@ -19,6 +19,9 @@
  * simplifies handling of sf::Events
  */
 class ListenerRenderWindow: public sf::RenderWindow {
+    //TODO: make Lists Thread-safe
+    //TODO: OnCloseListener and OnResizeListener
+
 private:
     std::list<Element*> mElementList; //list containing all Elements
     std::list<Listener*> mListenerList; //list containing all Listeners
