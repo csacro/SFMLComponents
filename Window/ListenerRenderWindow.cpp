@@ -8,12 +8,14 @@ void ListenerRenderWindow::run(sf::Color clearColor) {
     while (this->isOpen()) {
         sf::Event event;
         while(this->pollEvent(event)) {
+            listenerLock.lock();
             for(auto it = mListenerList.begin(); !listGotCleared && it != mListenerList.end(); it++) {
                 (*it)->listen(event, *this);
             }
             if(listGotCleared) {
                 listGotCleared = false;
             }
+            listenerLock.unlock();
             sf::FloatRect visibleArea;
             switch(event.type) {
                 case sf::Event::Closed:
@@ -28,10 +30,12 @@ void ListenerRenderWindow::run(sf::Color clearColor) {
                     break;
             }
         }
+        elementLock.lock();
         this->clear(clearColor);
         for(Element *e: mElementList) {
             e->draw(*this);
         }
+        elementLock.unlock();
         this->display();
     }
 }

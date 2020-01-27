@@ -19,13 +19,15 @@
  * simplifies handling of sf::Events
  */
 class ListenerRenderWindow: public sf::RenderWindow {
-    //TODO: make Lists Thread-safe
     //TODO: OnCloseListener and OnResizeListener
 
 private:
     std::list<Element*> mElementList; //list containing all Elements
     std::list<Listener*> mListenerList; //list containing all Listeners
     bool listGotCleared = false;
+
+    std::mutex elementLock;
+    std::mutex listenerLock;
 
 public:
     /**
@@ -50,22 +52,30 @@ public:
      * @param element Element* to be inserted
      */
      void addElement(Element* element) {
+         elementLock.lock();
          mElementList.push_back(element);
+         elementLock.unlock();
      };
      /**
       * add for mListenerLIst
      * @param listener Listener* to be inserted
       */
      void addListener(Listener* listener) {
+         listenerLock.lock();
          mListenerList.push_back(listener);
+         listenerLock.unlock();
      };
      /**
       * clear for mElementList and mListenerList
       */
      void clearLists(){
+         listenerLock.lock();
+         elementLock.lock();
          mElementList.clear();
          mListenerList.clear();
          listGotCleared = true;
+         elementLock.unlock();
+         listenerLock.unlock();
      };
 };
 
